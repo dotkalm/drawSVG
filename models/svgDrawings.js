@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
 
 const shapeSchema = new mongoose.Schema({
-    name: {type: String, required: true, unique: true},
-    shapeFill: String,
-    shapeX: Number,
-    shapeY: Number,
+    xPosition: Number,
+    yPosition: Number,
     isCircle: Boolean,
     radius: Number,
     shapeWidth: Number,
-    shapeHeight: Number
+    shapeHeight: Number,
+    strokeColor: String,
+    shapeFill: String,
+    strokeWidth: Number,
 });
 
 const Shapes = mongoose.model('Shape', shapeSchema);
