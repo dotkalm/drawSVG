@@ -35,7 +35,7 @@ const shapeController = {
             strokeWidth: req.body.strokeWidth
         },
         (err, createdShape) => {
-            err ? console.log(err) : res.redirect('/shapes')
+            err ? console.log(err) : res.redirect('/svgDrawing')
         })
     },
     edit: (req,res) => {
@@ -55,8 +55,15 @@ const shapeController = {
             } else {
                 req.body.isCircle = false
             }
-        SvgDrawings[req.params.index] = req.body;
-        res.redirect('index.ejs')
+        SvgDrawings.findByIdAndUpdate(req.params.id,req.body,(err,response)=>{
+            console.log('update route')
+            if(err){
+                res.send(err);
+            } else {
+                console.log(response, '<-- put route');
+                res.redirect('/svgDrawing/')
+            }
+        })
     }
 }
 

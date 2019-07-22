@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        <form method='POST' action='/shapes/<%=shape._id%>?method=PUT'>
+        <form action='/svgDrawing/<%=shape._id%>?_method=PUT' method='post'>
         <label>Xposition:</label><input type='number' name='xPosition' value='<%=shape.xPosition%>'/><br/>
             <label>Circle?:</label><input type='checkbox' name='isCircle' 
                 <% if(shape.isCircle === true){ %> 
