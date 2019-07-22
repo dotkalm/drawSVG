@@ -37,6 +37,26 @@ const shapeController = {
         (err, createdShape) => {
             err ? console.log(err) : res.redirect('/shapes')
         })
+    },
+    edit: (req,res) => {
+        SvgDrawings.findById(req.params.id, (err, shape) => {
+            if(err) {
+                res.send(err);
+            } else {
+                res.render('edit.ejs', {
+                    shape: shape
+                })
+            }
+        })
+    },
+    update: (req,res) => {
+        if(req.body.isCircle==='on'){
+                req.body.isCircle = true
+            } else {
+                req.body.isCircle = false
+            }
+        SvgDrawings[req.params.index] = req.body;
+        res.redirect('index.ejs')
     }
 }
 
