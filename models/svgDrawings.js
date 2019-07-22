@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const shapeSchema = new mongoose.Schema({
+    name: {type: String, required: true},
     xPosition: Number,
     yPosition: Number,
     isCircle: Boolean,

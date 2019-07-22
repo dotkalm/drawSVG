@@ -13,7 +13,8 @@
     <rect fill="#F2FF28" width="100" height="100"/>
     <a href='/svgDrawing/new'><circle fill="#08A94B" cx="6" cy="6" r="5"/></a>
     <%for(let i=0; i < allShapes.length; i++){ %>
-       <a href='/svgDrawing/<%=allShapes[i]._id%>/edit'><rect x=<%=allShapes[i].xPosition%> y=<%=allShapes[i].yPosition%> fill=<%=allShapes[i].shapeFill%> width=<%=allShapes[i].shapeWidth%> height=<%=allShapes[i].shapeHeight%>></a>
+   
+       <a href='/svgDrawing/<%=allShapes[i]._id%>/edit'><rect x=<%=allShapes[i].xPosition%> y=<%=allShapes[i].yPosition%> fill=<%=allShapes[i].shapeFill%> stroke=<%=allShapes[i].strokeColor%> stroke-miterlimit="10" stroke-width=<%=allShapes[i].strokeWidth%> width=<%=allShapes[i].shapeWidth%> height=<%=allShapes[i].shapeHeight%>></a>
     <%}%>
      
 </svg>

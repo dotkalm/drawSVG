@@ -22,8 +22,9 @@ const shapeController = {
         } else {
             req.body.isCircle = false;
         } 
-        console.log(req.body)
+        
         SvgDrawings.create({
+            name: req.body.name,
             xPosition: req.body.xPosition,
             yPosition: req.body.yPosition,
             isCircle: req.body.isCircle,
@@ -35,7 +36,7 @@ const shapeController = {
             strokeWidth: req.body.strokeWidth
         },
         (err, createdShape) => {
-            err ? console.log(err) : res.redirect('/svgDrawing')
+            err ? console.log(err) : res.redirect('/svgDrawing/')
         })
     },
     edit: (req,res) => {

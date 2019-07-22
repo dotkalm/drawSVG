@@ -6,15 +6,21 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        <form action='/svgDrawing/<%=shape._id%>?_method=PUT' method='post'>
-        <label>Xposition:</label><input type='number' name='xPosition' value='<%=shape.xPosition%>'/><br/>
-            <label>Circle?:</label><input type='checkbox' name='isCircle' 
-                <% if(shape.isCircle === true){ %> 
-                    checked
-                <% } %>
-            /><br/>
-            <label>fill Color:</label><input type='string' name='shapeFill' value='<%=shape.shapeFill%>'/><br/>
-            <input type='submit' name='' value='Edit Shape'/>
-        </form>
+<form action='/svgDrawing/<%=shape._id%>?_method=PUT' method='post'>
+<label>Xposition:</label><input type='number' name='xPosition' value='<%=shape.xPosition%>'/><br/>
+ <label>Yposition:</label><input type='number' name='yPosition'value='<%=shape.yPosition%>'/><br/>
+<label>Circle?:</label><input type='checkbox' name='isCircle'  
+    <% if(shape.isCircle === true){ %> 
+        checked
+    <% } %>
+/><br/>
+<label>Radius:</label><input type='number' name='radius' value='<%=shape.radius%>'/><br/>
+<label>Width:</label><input type='number' name='shapeWidth' value='<%=shape.shapeWidth%>'/><br/>
+<label>Height:</label><input type='number' name='shapeHeight' value='<%=shape.shapeHeight%>'/><br/>
+<label>Stroke Color:</label><input type='string' name='strokeColor' value='<%=shape.strokeColor%>'/><br/>
+<label>fill Color:</label><input type='string' name='shapeFill' value='<%=shape.shapeFill%>'/><br/>
+<label>Stroke Width</label><input type='number' name='strokeWidth' value='<%=shape.strokeWidth%>'/><br/>
+<input type='submit' name='' value='Edit Shape'/>
+</form>
     </body>
 </html>
